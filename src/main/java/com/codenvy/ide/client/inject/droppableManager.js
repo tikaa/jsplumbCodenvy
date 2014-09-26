@@ -1,0 +1,4 @@
+ function DroppableManager() {
+	 alert("DropRecognized!!"); 
+
+}

@@ -1,0 +1,8 @@
+<module>
+    <inherits name="com.google.gwt.user.User"/>
+    <inherits name="com.codenvy.ide.Api"/>
+    <inherits name="com.google.gwt.inject.Inject"/>   
+    <inherits name="com.google.gwt.resources.Resources" />
+    <inherits name="com.codenvy.ide.Editor"/>
+    <source path=""/>
+</module>
