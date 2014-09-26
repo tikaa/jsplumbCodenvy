@@ -42,8 +42,8 @@ public class ESBEditorPresenter extends AbstractEditorPresenter implements ESBEd
     private ImageResource PropertyImage = JSBundle.INSTANCE
             .PropertyImage();
 
-    static  VerticalPanel window1   = new VerticalPanel();
-    static  HorizontalPanel window2 = new HorizontalPanel();
+    static  VerticalPanel draggablePanel = new VerticalPanel();
+    static  HorizontalPanel droppablePanel = new HorizontalPanel();
     
     static Widget selectedWidget = new Widget();
 
@@ -94,7 +94,7 @@ RichTextArea textArea;
         panel.add(callimage);
         
         Label myLabel = new Label();
-        myLabel.setText("SuccessfullGWTAttemptYOI!");
+        myLabel.setText("Sample GWT Label");
         
         panel.add(myLabel);
         panel.add(textArea);

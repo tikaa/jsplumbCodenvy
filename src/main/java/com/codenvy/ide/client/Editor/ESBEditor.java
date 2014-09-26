@@ -4,8 +4,6 @@ import java.util.HashMap;
 
 import com.google.gwt.user.client.ui.AcceptsOneWidget;
 import com.codenvy.ide.api.editor.AbstractEditorPresenter;
-import com.codenvy.ide.client.Controllers.NoInsertAtEndIndexedDropController;
-import com.codenvy.ide.client.Controllers.preventRemovalDragController;
 import com.codenvy.ide.client.inject.JSBundle;
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
@@ -34,17 +32,14 @@ public class ESBEditor extends AbstractEditorPresenter
     private ImageResource PropertyImage = JSBundle.INSTANCE
             .PropertyImage();
     
-    static  VerticalPanel mypanel;
- public static DockLayoutPanel panel ;
-    static  VerticalPanel window1   = new VerticalPanel();
-    static  HorizontalPanel window2 = new HorizontalPanel();
+    static  VerticalPanel backgroundPanel;
+    public static DockLayoutPanel dockPanel ;
+
+    static  VerticalPanel draggablePanel = new VerticalPanel();
+    static  HorizontalPanel droppablePanel = new HorizontalPanel();
     static RootPanel rootPanel;
     
     static Widget selectedWidget = new Widget();
-
-    static String deletingWidgetId = "";
-    static String widgetbeforeDeletingWidget ="";
-    static String WidgetafterDeletingWdget = "";
 
     public static HashMap<Integer, String> WidgetMap = new HashMap<>();
 
@@ -106,112 +101,94 @@ public class ESBEditor extends AbstractEditorPresenter
 
     @Override
     public void go(AcceptsOneWidget container) {
-        
-        panel = new DockLayoutPanel(Style.Unit.PX);
-        panel.setWidth("100%");
-        panel.setHeight("100%");
-        
-        window1.getElement().setId("window1");
-        window2.getElement().setId("window2");
 
-        window1.getElement().setClassName("window");
-        window2.getElement().setClassName("window");
-        window2.setPixelSize(1350, 1000);
-        window2.getElement().getStyle().setProperty("position", "relative");
-        window1.getElement().getStyle().setProperty("position", "relative");
+        dockPanel = new DockLayoutPanel(Style.Unit.PX);
+        dockPanel.setWidth("100%"); //set full width and height for the main dock panel
+        dockPanel.setHeight("100%");
+        
+        draggablePanel.getElement().setId("draggablePanel");
+        droppablePanel.getElement().setId("droppablePanel");
+
+        draggablePanel.getElement().setClassName("window");
+        droppablePanel.getElement().setClassName("window");
+        droppablePanel.setPixelSize(1350, 1000); // numerical values needs to be alrtered to a dynamic value after testing
+        droppablePanel.getElement().getStyle().setProperty("position", "relative");
+        draggablePanel.getElement().getStyle().setProperty("position", "relative");
 
         callimage.getElement().setId("callMediator");
         callimage.setResource(CallImage);
         callimage.addClickHandler(clickHandler);
-        window1.add(callimage);
+        draggablePanel.add(callimage);
 
         dropimage.getElement().setId("dropMediator");
         dropimage.setResource(DropImage);
         dropimage.addClickHandler(clickHandler);
-        window1.add(dropimage);
+        draggablePanel.add(dropimage);
 
         calltempimage.getElement().setId("callTemplateMediator");
         calltempimage.setResource(CallTempImage);
         calltempimage.addClickHandler(clickHandler);
-        window1.add(calltempimage);
+        draggablePanel.add(calltempimage);
 
         logimage.getElement().setId("logMediator");
         logimage.setResource(LogImage);
         logimage.addClickHandler(clickHandler);
-        window1.add(logimage);
+        draggablePanel.add(logimage);
 
         storeimage.getElement().setId("storeMediator");
         storeimage.setResource(StoreImage);
         storeimage.addClickHandler(clickHandler);
-        window1.add(storeimage);
+        draggablePanel.add(storeimage);
 
         sendimage.getElement().setId("sendMediator");
         sendimage.setResource(SendImage);
         sendimage.addClickHandler(clickHandler);
-        //sendimage.addAttachHandler( (Handler) keyPressHandler);
-        window1.add(sendimage);
+
+        draggablePanel.add(sendimage);
 
         throttleimage.getElement().setId("throttleMediator");
         throttleimage.setResource(ThrottleImage);
         throttleimage.addClickHandler(clickHandler);
-        //throttleimage.addAttachHandler( (Handler) keyPressHandler);
-        window1.add(throttleimage);
+
+        draggablePanel.add(throttleimage);
 
         payloadfactoryimage.getElement().setId("paylfacMediator");
         payloadfactoryimage.setResource(PayloadFactoryImage);
         payloadfactoryimage.addClickHandler(clickHandler);
-        //payloadfactoryimage.addAttachHandler( (Handler) keyPressHandler);
-        window1.add(payloadfactoryimage);
+
+        draggablePanel.add(payloadfactoryimage);
 
         respondimage.getElement().setId("respondMediator");
         respondimage.setResource(RespondImage);
         respondimage.addClickHandler(clickHandler);
-        //respondimage.addAttachHandler( (Handler) keyPressHandler);
-        window1.add(respondimage);
+
+        draggablePanel.add(respondimage);
 
         cloneimage.getElement().setId("cloneMediator");
         cloneimage.setResource(CloneImage);
         cloneimage.addClickHandler(clickHandler);
-        window1.add(cloneimage);
+        draggablePanel.add(cloneimage);
         
-        //window2.addKeyDownHandler(handler);
+
         propertyimage.getElement().setId("propertyMediator");
         propertyimage.setResource(PropertyImage);
         propertyimage.addClickHandler(clickHandler);
-        window1.add(propertyimage);
+        draggablePanel.add(propertyimage);
         
-        /* DRAG AND DROP 
-		preventRemovalDragController dragController = new preventRemovalDragController(RootPanel.get("window2"), true);
 
-		NoInsertAtEndIndexedDropController widgetDropController = new NoInsertAtEndIndexedDropController(window2);
-		dragController.registerDropController(widgetDropController);
 
-		/* Trying to make droppable and draggable 
-		dragController.makeDraggable(callimage);
-		dragController.makeDraggable(calltempimage);
-		dragController.makeDraggable(logimage);
-		dragController.makeDraggable(dropimage);
-		dragController.makeDraggable(sendimage);
-		dragController.makeDraggable(storeimage);
-		dragController.makeDraggable(respondimage);
-		dragController.makeDraggable(propertyimage);
-		dragController.makeDraggable(throttleimage);
-		dragController.makeDraggable(payloadfactoryimage);
-		dragController.makeDraggable(cloneimage);*/
-		
-
-        panel.add(window1);
-        panel.add(window2);
+        dockPanel.add(draggablePanel);
+        dockPanel.add(droppablePanel);
         
-        RootPanel.get().add(panel);
-        panel.setPixelSize(1600, 1600);
-        container.setWidget(panel);
+        RootPanel.get().add(dockPanel);
+        dockPanel.setPixelSize(1600, 1600); //numerical values- needs to be changed after testing
+        container.setWidget(dockPanel);
         
     }
 
     @Override
     protected void initializeEditor() {
-      mypanel = new VerticalPanel();
+      backgroundPanel = new VerticalPanel();
 
         //use or load content of the file
         if(input.getFile().getContent() == null){
@@ -223,7 +200,7 @@ public class ESBEditor extends AbstractEditorPresenter
 
                 @Override
                 public void onSuccess(File result) {
-                   mypanel.add(rootPanel);
+                   backgroundPanel.add(rootPanel);
                 }
             });
         }
