@@ -1,3 +1,19 @@
+/*
+ * Copyright (c) 2014, WSO2 Inc. (http://www.wso2.org) All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
 package com.codenvy.ide.client.Controllers;
 
 import com.allen_sauer.gwt.dnd.client.drop.SimpleDropController;
@@ -14,20 +30,11 @@ import  com.codenvy.ide.client.Editor.ESBEditor;
 
 import com.allen_sauer.gwt.dnd.client.DragContext;
 
-/**
- * Created by root on 9/10/14.*/
 public class NoInsertAtEndIndexedDropController extends SimpleDropController {
-
-    private Widget dropTarget;
-    private EntryPoint mainEntryPOint;
 
     static MouseMoveEvent mouseEvent;
     static int mouseX =0;
     static int mouseY=0;
-    // DroppableOptions options = new DroppableOptions();
-
-    // String id1 = null;
-    // String id2 = null;
 
     private ImageResource DropCallImage = JSBundle.INSTANCE.CallImage();
     private ImageResource DropCallTempImage = JSBundle.INSTANCE
@@ -50,13 +57,8 @@ public class NoInsertAtEndIndexedDropController extends SimpleDropController {
     int x = 50;
     int y = 200;
 
-
-
-    public NoInsertAtEndIndexedDropController(HorizontalPanel dropTarget) {
+    public NoInsertAtEndIndexedDropController(Widget dropTarget) {
         super(dropTarget);
-        this.dropTarget = dropTarget;
-        // this.mainEntryPOint = newEntrypoint;
-        // TODO Auto-generated constructor stub
     }
 
     @Override
@@ -64,16 +66,14 @@ public class NoInsertAtEndIndexedDropController extends SimpleDropController {
         ElementCount++;
         x = x + 100;
         for (Widget widget : context.selectedWidgets) {
-            //SimplePanel newDroppedPanel = new SimplePanel();
             Image newDroppedElem = new Image();
             newDroppedElem.getElement().setId("dragged" + ElementCount);
             newDroppedElem.getElement().setPropertyBoolean("draggable", false);
             newDroppedElem.addClickHandler(ESBEditor.clickHandler);
-            //newDroppedElem.si//addKeyDownHandler(Gwtjsplumbtest.keyDownHandler);
             widget.removeStyleName("gwt-Image dragdrop-draggable dragdrop-handle dragdrop-dragging");
             widget.addStyleName("gwt-Image dragdrop-draggable dragdrop-handle");
-            RootPanel.get("window1").add(widget);
-            RootPanel.get("window2").remove(widget);
+            RootPanel.get("draggablePanel").add(widget);
+            RootPanel.get("droppablePanel").remove(widget);
 
             String thisId = widget.getElement().getId();
 
