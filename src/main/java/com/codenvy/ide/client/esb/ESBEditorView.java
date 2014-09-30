@@ -25,7 +25,6 @@ public interface ESBEditorView extends View<ESBEditorView.ActionDelegate> {
 
 public interface ActionDelegate extends BaseActionDelegate {
     /** Performs some actions in response to a user's clicking on Button */
-
 }
 
 }

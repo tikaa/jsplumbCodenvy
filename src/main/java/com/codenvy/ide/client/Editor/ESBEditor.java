@@ -31,7 +31,24 @@ import com.google.gwt.user.client.rpc.AsyncCallback;
 
 public class ESBEditor extends AbstractEditorPresenter 
 {
-    
+
+    public static final String DRAGGABLE_PANEL = "draggablePanel";
+    public static final String DROPPABLE_PANEL = "droppablePanel";
+    public static final String WINDOW = "window";
+    public static final String POSITION = "position";
+    public static final String RELATIVE = "relative";
+    public static final String CALL_MEDIATOR = "callMediator";
+    public static final String DROP_MEDIATOR = "dropMediator";
+    public static final String CALL_TEMPLATE_MEDIATOR = "callTemplateMediator";
+    public static final String LOG_MEDIATOR = "logMediator";
+    public static final String STORE_MEDIATOR = "storeMediator";
+    public static final String SEND_MEDIATOR = "sendMediator";
+    public static final String THROTTLE_MEDIATOR = "throttleMediator";
+    public static final String PAYLFAC_MEDIATOR = "paylfacMediator";
+    public static final String RESPOND_MEDIATOR = "respondMediator";
+    public static final String CLONE_MEDIATOR = "cloneMediator";
+    public static final String PROPERTY_MEDIATOR = "propertyMediator";
+
     private ImageResource CallImage = JSBundle.INSTANCE.CallImage();
     private ImageResource CallTempImage = JSBundle.INSTANCE
             .CalleTempImage();
@@ -111,69 +128,67 @@ public class ESBEditor extends AbstractEditorPresenter
     public void go(AcceptsOneWidget container) {
 
         dockPanel = new DockLayoutPanel(Style.Unit.PX);
-        dockPanel.setWidth("100%"); //set full width and height for the main dock panel
-        dockPanel.setHeight("100%");
-        
-        draggablePanel.getElement().setId("draggablePanel");
-        droppablePanel.getElement().setId("droppablePanel");
 
-        draggablePanel.getElement().setClassName("window");
-        droppablePanel.getElement().setClassName("window");
+        draggablePanel.getElement().setId(DRAGGABLE_PANEL);
+        droppablePanel.getElement().setId(DROPPABLE_PANEL);
+
+        draggablePanel.getElement().setClassName(WINDOW);
+        droppablePanel.getElement().setClassName(WINDOW);
         droppablePanel.setPixelSize(1350, 1000); // numerical values needs to be alrtered to a dynamic value after testing
-        droppablePanel.getElement().getStyle().setProperty("position", "relative");
-        draggablePanel.getElement().getStyle().setProperty("position", "relative");
+        droppablePanel.getElement().getStyle().setProperty(POSITION, RELATIVE);
+        draggablePanel.getElement().getStyle().setProperty(POSITION, RELATIVE);
 
-        callimage.getElement().setId("callMediator"); // need to optimize using enum, still work on progress
+        callimage.getElement().setId(CALL_MEDIATOR); // need to optimize using enum, still work on progress
         callimage.setResource(CallImage);
         callimage.addClickHandler(clickHandler);
         draggablePanel.add(callimage);
 
-        dropimage.getElement().setId("dropMediator");
+        dropimage.getElement().setId(DROP_MEDIATOR);
         dropimage.setResource(DropImage);
         dropimage.addClickHandler(clickHandler);
         draggablePanel.add(dropimage);
 
-        calltempimage.getElement().setId("callTemplateMediator");
+        calltempimage.getElement().setId(CALL_TEMPLATE_MEDIATOR);
         calltempimage.setResource(CallTempImage);
         calltempimage.addClickHandler(clickHandler);
         draggablePanel.add(calltempimage);
 
-        logimage.getElement().setId("logMediator");
+        logimage.getElement().setId(LOG_MEDIATOR);
         logimage.setResource(LogImage);
         logimage.addClickHandler(clickHandler);
         draggablePanel.add(logimage);
 
-        storeimage.getElement().setId("storeMediator");
+        storeimage.getElement().setId(STORE_MEDIATOR);
         storeimage.setResource(StoreImage);
         storeimage.addClickHandler(clickHandler);
         draggablePanel.add(storeimage);
 
-        sendimage.getElement().setId("sendMediator");
+        sendimage.getElement().setId(SEND_MEDIATOR);
         sendimage.setResource(SendImage);
         sendimage.addClickHandler(clickHandler);
         draggablePanel.add(sendimage);
 
-        throttleimage.getElement().setId("throttleMediator");
+        throttleimage.getElement().setId(THROTTLE_MEDIATOR);
         throttleimage.setResource(ThrottleImage);
         throttleimage.addClickHandler(clickHandler);
         draggablePanel.add(throttleimage);
 
-        payloadfactoryimage.getElement().setId("paylfacMediator");
+        payloadfactoryimage.getElement().setId(PAYLFAC_MEDIATOR);
         payloadfactoryimage.setResource(PayloadFactoryImage);
         payloadfactoryimage.addClickHandler(clickHandler);
         draggablePanel.add(payloadfactoryimage);
 
-        respondimage.getElement().setId("respondMediator");
+        respondimage.getElement().setId(RESPOND_MEDIATOR);
         respondimage.setResource(RespondImage);
         respondimage.addClickHandler(clickHandler);
         draggablePanel.add(respondimage);
 
-        cloneimage.getElement().setId("cloneMediator");
+        cloneimage.getElement().setId(CLONE_MEDIATOR);
         cloneimage.setResource(CloneImage);
         cloneimage.addClickHandler(clickHandler);
         draggablePanel.add(cloneimage);
 
-        propertyimage.getElement().setId("propertyMediator");
+        propertyimage.getElement().setId(PROPERTY_MEDIATOR);
         propertyimage.setResource(PropertyImage);
         propertyimage.addClickHandler(clickHandler);
         draggablePanel.add(propertyimage);
@@ -181,7 +196,6 @@ public class ESBEditor extends AbstractEditorPresenter
         dockPanel.add(draggablePanel);
         dockPanel.add(droppablePanel);
         RootPanel.get().add(dockPanel);
-        dockPanel.setPixelSize(1600, 1600); //numerical values- needs to be changed after testing
         container.setWidget(dockPanel);
         
     }
@@ -195,9 +209,7 @@ public class ESBEditor extends AbstractEditorPresenter
             input.getFile().getProject().getContent(input.getFile(), new AsyncCallback<File>() {
                 @Override
                 public void onFailure(Throwable caught) {
-                    
                 }
-
                 @Override
                 public void onSuccess(File result) {
                    backgroundPanel.add(rootPanel);
@@ -205,15 +217,10 @@ public class ESBEditor extends AbstractEditorPresenter
             });
         }
         else{
-           
         }
-        
     }
     
     public static final ClickHandler clickHandler = new ClickHandler() {
-    
-    
-    
         @Override
         public void onClick(ClickEvent event) {
             event.preventDefault();
@@ -223,20 +230,8 @@ public class ESBEditor extends AbstractEditorPresenter
 
     public static native void gwtjsPlumbDemo(String prevElem, String currElem,
                                              int ElemCount) /*-{
-        //var countElem =this.@com.wso2.jsplumb.client.NoInsertAtEndIndexedDropController::ElementCount;
-        //$wnd.alert(prevElem);
-        //$wnd.alert(currElem);
         if (ElemCount > 1) {
             $wnd.gwtjsplumbdemo(prevElem, currElem);
         }
     }-*/;
-
-    public static native void myecho(String selectedWid) /*-{
-        $wnd.alert(selectedWid);
-        //$wnd.alert(currElem);
-
-    }-*/;
-
-
-
 }
