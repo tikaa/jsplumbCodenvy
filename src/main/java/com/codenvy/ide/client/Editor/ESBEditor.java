@@ -54,10 +54,7 @@ public class ESBEditor extends AbstractEditorPresenter
     static  VerticalPanel draggablePanel = new VerticalPanel();
     static  HorizontalPanel droppablePanel = new HorizontalPanel();
     static RootPanel rootPanel;
-    
     static Widget selectedWidget = new Widget();
-
-    public static HashMap<Integer, String> WidgetMap = new HashMap<>();
 
     private Image callimage = new Image();
     private Image dropimage = new Image();

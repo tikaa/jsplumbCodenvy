@@ -2,16 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3a63c2a6-7bf1-4aa5-8fbd-35a7548fdfe8" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/empty-extension.iml" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/codenvy/ide/client/Editor/ESBEditor.java" afterPath="$PROJECT_DIR$/src/main/java/com/codenvy/ide/client/Editor/ESBEditor.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/codenvy/ide/client/esb/ESBEditorPresenter.java" afterPath="$PROJECT_DIR$/src/main/java/com/codenvy/ide/client/esb/ESBEditorPresenter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/codenvy/ide/client/esb/ESBEditorView.java" afterPath="$PROJECT_DIR$/src/main/java/com/codenvy/ide/client/esb/ESBEditorView.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/codenvy/ide/client/esb/ESBEditorViewImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/codenvy/ide/client/esb/ESBEditorViewImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/codenvy/ide/client/Editor/ExtendedHorizontalPanel.java" afterPath="$PROJECT_DIR$/src/main/java/com/codenvy/ide/client/Editor/ExtendedHorizontalPanel.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/codenvy/ide/MyExtension.java" afterPath="$PROJECT_DIR$/src/main/java/com/codenvy/ide/MyExtension.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/codenvy/ide/client/Controllers/NoInsertAtEndIndexedDropController.java" afterPath="$PROJECT_DIR$/src/main/java/com/codenvy/ide/client/Controllers/NoInsertAtEndIndexedDropController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="empty-extension.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -60,16 +51,16 @@
       <file leaf-file-name="ESBEditor.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/codenvy/ide/client/Editor/ESBEditor.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.76038337" vertical-offset="246" max-vertical-offset="3675">
-              <caret line="75" column="5" selection-start-line="75" selection-start-column="5" selection-end-line="75" selection-end-column="5" />
+            <state vertical-scroll-proportion="0.26754385" vertical-offset="416" max-vertical-offset="3630">
+              <caret line="55" column="31" selection-start-line="55" selection-start-column="31" selection-end-line="55" selection-end-column="31" />
               <folding>
-                <element signature="e#0#8535#0" expanded="true" />
-                <element signature="e#7764#7974#0" expanded="true" />
-                <element signature="e#7967#7968#0" expanded="true" />
-                <marker date="1412058213131" expanded="true" signature="8119:8387" placeholder="{...}" />
-                <marker date="1412058213131" expanded="true" signature="8129:8289" placeholder="//..." />
-                <marker date="1412058213131" expanded="true" signature="8317:8381" placeholder="{...}" />
-                <marker date="1412058213131" expanded="true" signature="8453:8526" placeholder="{...}" />
+                <element signature="e#0#8457#0" expanded="true" />
+                <element signature="e#7686#7896#0" expanded="true" />
+                <element signature="e#7889#7890#0" expanded="true" />
+                <marker date="1412058393391" expanded="true" signature="8041:8309" placeholder="{...}" />
+                <marker date="1412058393391" expanded="true" signature="8051:8211" placeholder="//..." />
+                <marker date="1412058393391" expanded="true" signature="8239:8303" placeholder="{...}" />
+                <marker date="1412058393391" expanded="true" signature="8375:8448" placeholder="{...}" />
               </folding>
             </state>
           </provider>
@@ -674,12 +665,12 @@
       <workItem from="1411465940160" duration="1170000" />
       <workItem from="1411527640822" duration="639000" />
       <workItem from="1411713498197" duration="1045000" />
-      <workItem from="1412057502241" duration="717000" />
+      <workItem from="1412057502241" duration="892000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="19110000" />
+    <option name="totallyTimeSpent" value="19285000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="63" y="-4" width="1858" height="1085" extended-state="6" />
@@ -739,13 +730,13 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="1298" max-vertical-offset="4080">
           <caret line="193" column="48" selection-start-line="193" selection-start-column="48" selection-end-line="193" selection-end-column="48" />
           <folding>
-            <element signature="e#0#8535#0" expanded="true" />
-            <element signature="e#7764#7974#0" expanded="true" />
-            <element signature="e#7967#7968#0" expanded="true" />
-            <marker date="1412058213131" expanded="true" signature="8119:8387" placeholder="{...}" />
-            <marker date="1412058213131" expanded="true" signature="8129:8289" placeholder="//..." />
-            <marker date="1412058213131" expanded="true" signature="8317:8381" placeholder="{...}" />
-            <marker date="1412058213131" expanded="true" signature="8453:8526" placeholder="{...}" />
+            <element signature="e#0#8457#0" expanded="true" />
+            <element signature="e#7686#7896#0" expanded="true" />
+            <element signature="e#7889#7890#0" expanded="true" />
+            <marker date="1412058393391" expanded="true" signature="8041:8309" placeholder="{...}" />
+            <marker date="1412058393391" expanded="true" signature="8051:8211" placeholder="//..." />
+            <marker date="1412058393391" expanded="true" signature="8239:8303" placeholder="{...}" />
+            <marker date="1412058393391" expanded="true" signature="8375:8448" placeholder="{...}" />
           </folding>
         </state>
       </provider>
@@ -836,13 +827,13 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="2835" max-vertical-offset="3870">
           <caret line="202" column="0" selection-start-line="202" selection-start-column="0" selection-end-line="202" selection-end-column="0" />
           <folding>
-            <element signature="e#0#8535#0" expanded="true" />
-            <element signature="e#7764#7974#0" expanded="true" />
-            <element signature="e#7967#7968#0" expanded="true" />
-            <marker date="1412058213131" expanded="true" signature="8119:8387" placeholder="{...}" />
-            <marker date="1412058213131" expanded="true" signature="8129:8289" placeholder="//..." />
-            <marker date="1412058213131" expanded="true" signature="8317:8381" placeholder="{...}" />
-            <marker date="1412058213131" expanded="true" signature="8453:8526" placeholder="{...}" />
+            <element signature="e#0#8457#0" expanded="true" />
+            <element signature="e#7686#7896#0" expanded="true" />
+            <element signature="e#7889#7890#0" expanded="true" />
+            <marker date="1412058393391" expanded="true" signature="8041:8309" placeholder="{...}" />
+            <marker date="1412058393391" expanded="true" signature="8051:8211" placeholder="//..." />
+            <marker date="1412058393391" expanded="true" signature="8239:8303" placeholder="{...}" />
+            <marker date="1412058393391" expanded="true" signature="8375:8448" placeholder="{...}" />
           </folding>
         </state>
       </provider>
@@ -1188,16 +1179,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/codenvy/ide/client/Editor/ESBEditor.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.76038337" vertical-offset="246" max-vertical-offset="3675">
-          <caret line="75" column="5" selection-start-line="75" selection-start-column="5" selection-end-line="75" selection-end-column="5" />
+        <state vertical-scroll-proportion="0.26754385" vertical-offset="416" max-vertical-offset="3630">
+          <caret line="55" column="31" selection-start-line="55" selection-start-column="31" selection-end-line="55" selection-end-column="31" />
           <folding>
-            <element signature="e#0#8535#0" expanded="true" />
-            <element signature="e#7764#7974#0" expanded="true" />
-            <element signature="e#7967#7968#0" expanded="true" />
-            <marker date="1412058213131" expanded="true" signature="8119:8387" placeholder="{...}" />
-            <marker date="1412058213131" expanded="true" signature="8129:8289" placeholder="//..." />
-            <marker date="1412058213131" expanded="true" signature="8317:8381" placeholder="{...}" />
-            <marker date="1412058213131" expanded="true" signature="8453:8526" placeholder="{...}" />
+            <element signature="e#0#8457#0" expanded="true" />
+            <element signature="e#7686#7896#0" expanded="true" />
+            <element signature="e#7889#7890#0" expanded="true" />
+            <marker date="1412058393391" expanded="true" signature="8041:8309" placeholder="{...}" />
+            <marker date="1412058393391" expanded="true" signature="8051:8211" placeholder="//..." />
+            <marker date="1412058393391" expanded="true" signature="8239:8303" placeholder="{...}" />
+            <marker date="1412058393391" expanded="true" signature="8375:8448" placeholder="{...}" />
           </folding>
         </state>
       </provider>
