@@ -151,43 +151,35 @@ public class ESBEditor extends AbstractEditorPresenter
         sendimage.getElement().setId("sendMediator");
         sendimage.setResource(SendImage);
         sendimage.addClickHandler(clickHandler);
-
         draggablePanel.add(sendimage);
 
         throttleimage.getElement().setId("throttleMediator");
         throttleimage.setResource(ThrottleImage);
         throttleimage.addClickHandler(clickHandler);
-
         draggablePanel.add(throttleimage);
 
         payloadfactoryimage.getElement().setId("paylfacMediator");
         payloadfactoryimage.setResource(PayloadFactoryImage);
         payloadfactoryimage.addClickHandler(clickHandler);
-
         draggablePanel.add(payloadfactoryimage);
 
         respondimage.getElement().setId("respondMediator");
         respondimage.setResource(RespondImage);
         respondimage.addClickHandler(clickHandler);
-
         draggablePanel.add(respondimage);
 
         cloneimage.getElement().setId("cloneMediator");
         cloneimage.setResource(CloneImage);
         cloneimage.addClickHandler(clickHandler);
         draggablePanel.add(cloneimage);
-        
 
         propertyimage.getElement().setId("propertyMediator");
         propertyimage.setResource(PropertyImage);
         propertyimage.addClickHandler(clickHandler);
         draggablePanel.add(propertyimage);
-        
-
 
         dockPanel.add(draggablePanel);
         dockPanel.add(droppablePanel);
-        
         RootPanel.get().add(dockPanel);
         dockPanel.setPixelSize(1600, 1600); //numerical values- needs to be changed after testing
         container.setWidget(dockPanel);
